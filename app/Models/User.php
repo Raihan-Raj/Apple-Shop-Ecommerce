@@ -11,6 +11,7 @@ class User extends Model
     protected $fillable = [
         'email',
         'otp'
+
     ];
     public function profile(): HasOne
     {
