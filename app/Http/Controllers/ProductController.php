@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ResponseHelper;
+use App\Models\CustomerProfile;
 use App\Models\Product;
 use App\Models\ProductDetails;
 use App\Models\ProductReview;
@@ -49,5 +50,22 @@ class ProductController extends Controller
                 $query->select('id', 'cus_name');
             }])->get();
         return ResponseHelper::Out('success', $data, 200);
+    }
+
+
+    public function ProductReview(Request $request)
+    {
+        $user_id = $request->header('id');
+        $profile = CustomerProfile::where('user_id', $user_id)->first();
+        if ($profile) {
+            $request->merge(['customer_id' => $profile->id]);
+            $data = ProductReview::updateOrCreate(
+                ['customer_id' => $profile->id, 'product_id' => $request->input('product_id')],
+                $request->input()
+            );
+            return ResponseHelper::Out('success', $data, 200);
+        } else {
+            return ResponseHelper::Out('Fail', "Customer Profile Not Exists", 200);
+        }
     }
 }

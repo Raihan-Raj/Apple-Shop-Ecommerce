@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\TokenAuthenticMiddleware;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,3 +46,6 @@ Route::get('/Logout', [UserController::class, 'UserLogout']);
 
 Route::post('/CreateProfile', [ProfileController::class, 'CreateProfile'])->middleware([TokenAuthenticMiddleware::class]);
 Route::get('/ReadProfile', [ProfileController::class, 'ReadProfile'])->middleware([TokenAuthenticMiddleware::class]);
+
+//Product Review
+Route::post('/CreateProductReview', [ProductController::class, 'ProductReview'])->middleware([TokenAuthenticMiddleware::class]);
