@@ -8,6 +8,8 @@ use App\Models\Product;
 use App\Models\ProductDetails;
 use App\Models\ProductReview;
 use App\Models\ProductSlider;
+use App\Models\ProductWish;
+use Exception;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -67,5 +69,40 @@ class ProductController extends Controller
         } else {
             return ResponseHelper::Out('Fail', "Customer Profile Not Exists", 200);
         }
+    }
+
+
+    public function ProductWishList(Request $request)
+    {
+        $user_id = $request->header('id');
+        $data = ProductWish::where('user_id', $user_id)->with('product')->get();
+        return ResponseHelper::Out('success', $data, 200);
+    }
+
+    public function CreateWishList(Request $request)
+    {
+        try {
+            $user_id = $request->header('id');
+            $data = ProductWish::updateOrCreate(
+                [
+                    'user_id' => $user_id,
+                    'product_id' => $request->product_id
+                ],
+                [
+                    'user_id' => $user_id,
+                    'product_id' => $request->product_id
+                ]
+            );
+            return ResponseHelper::Out('success', $data, 200);
+        } catch (Exception $e) {
+            return ResponseHelper::Out('fail', "", 200);
+        }
+    }
+
+    public function RemoveWishList(Request $request)
+    {
+        $user_id = $request->header('id');
+        $data = ProductWish::where(['user_id' => $user_id, 'product_id' => $request->product_id])->delete();
+        return ResponseHelper::Out('success', $data, 200);
     }
 }

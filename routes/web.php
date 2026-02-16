@@ -8,7 +8,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\TokenAuthenticMiddleware;
 use App\Models\Product;
+use Doctrine\Common\Lexer\Token;
 use Illuminate\Support\Facades\Route;
+use TheSeer\Tokenizer\Token as TokenizerToken;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +51,8 @@ Route::get('/ReadProfile', [ProfileController::class, 'ReadProfile'])->middlewar
 
 //Product Review
 Route::post('/CreateProductReview', [ProductController::class, 'ProductReview'])->middleware([TokenAuthenticMiddleware::class]);
+
+//Wish List
+Route::get('/ProductWishList', [ProductController::class, 'ProductWishList'])->middleware([TokenAuthenticMiddleware::class]);
+Route::post('/CreateWishList/{product_id}', [ProductController::class, 'CreateWishList'])->middleware([TokenAuthenticMiddleware::class]);
+Route::get('/RemoveWishList/{product_id}', [ProductController::class, 'RemoveWishList'])->middleware([TokenAuthenticMiddleware::class]);
