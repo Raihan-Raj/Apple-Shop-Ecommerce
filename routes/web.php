@@ -67,3 +67,8 @@ Route::get('/DeleteCartList/{product_id}', [ProductController::class, 'DeleteCar
 Route::get('/InvoiceCreate', [InvoiceController::class, 'InvoiceCreate'])->middleware([TokenAuthenticMiddleware::class]);
 Route::get('/InvoiceList', [InvoiceController::class, 'InvoiceList'])->middleware([TokenAuthenticMiddleware::class]);
 Route::get('/InvoiceProductList/{invoice_id}', [InvoiceController::class, 'InvoiceProductList'])->middleware([TokenAuthenticMiddleware::class]);
+
+//Payment
+Route::post('/PaymentSuccess', [InvoiceController::class, 'PaymentSuccess']);
+Route::post('/PaymentCancel', [InvoiceController::class, 'PaymentCancel']);
+Route::post('/PaymenyFail', [InvoiceController::class, 'PaymentFail']);

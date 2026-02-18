@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use App\Models\Invoice;
 use App\Models\SslcommerzAccount;
 use Exception;
 use Illuminate\Support\Facades\Http;
@@ -52,5 +53,33 @@ class SSLCommerz
         } catch (Exception $e) {
             return $ssl;
         }
+    }
+
+    static function InitiateSuccess($tran_id)
+    {
+        Invoice::where(['tran_id' => $tran_id, 'val_id' => 0])
+            ->update(['payment_status' => 'Success']);
+        return 1;
+    }
+
+    static function InitiateCancel($tran_id)
+    {
+        Invoice::where(['tran_id' => $tran_id, 'val_id' => 0])
+            ->update(['payment_status' => 'Cancel']);
+        return 1;
+    }
+
+    static function InitiateFail($tran_id)
+    {
+        Invoice::where(['tran_id' => $tran_id, 'val_id' => 0])
+            ->update(['payment_status' => 'Fail']);
+        return 1;
+    }
+
+    static function InitiateIPN($tran_id, $status, $val_id)
+    {
+        Invoice::where(['tran_id' => $tran_id, 'val_id' => 0])
+            ->update(['payment_status' => $status, 'val_id' => $val_id]);
+        return 1;
     }
 }
