@@ -1,0 +1,45 @@
+/* Header start */
+      
+
+        /* Top Bar */
+        .top-bar {
+            background: hsl(0, 2%, 11%);
+            font-size: 14px;
+            padding: 8px 0;
+        }
+
+        .top-bar a {
+            text-decoration: none;
+            color: #ebe5e5;
+            margin-left: 20px;
+        }
+
+        /* Main Navbar */
+        .navbar {
+            padding: 15px 0;
+            border-bottom: 3px solid #f1ecea;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 26px;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            margin-left: 20px;
+            color: #f1e7e7 !important;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ff6b35 !important;
+        }
+
+        .icon-link {
+            margin-left: 18px;
+            font-size: 18px;
+        }
+
+    /* Header end */
+
+ 

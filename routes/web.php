@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\ProductController;
@@ -23,6 +24,9 @@ use TheSeer\Tokenizer\Token as TokenizerToken;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//HomePage
+Route::get('/', [HomeController::class, 'HomePage']);
 
 //Brand List
 Route::get('/BrandList', [BrandController::class, 'BrandList']);
