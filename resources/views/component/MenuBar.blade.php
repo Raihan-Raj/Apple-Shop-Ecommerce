@@ -38,10 +38,7 @@
                     <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
                         PRODUCTS
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">iPhone</a></li>
-                        <li><a class="dropdown-item" href="#">MacBook</a></li>
-                        <li><a class="dropdown-item" href="#">Accessories</a></li>
+                    <ul id="categoriItem" class="dropdown-menu">
                     </ul>
                 </li>
 
@@ -66,4 +63,16 @@
         </div>
     </div>
 </nav>
+
+<script>
+    Category();
+    async function Category() {
+        let res = await axios.get('/CategoryList');
+        $("#categoriItem").empty()
+        res.data['data'].forEach((item, i) => {
+            let EachItem = `<li><a class="dropdown-item" href="#">${item['categoryName']}</a></li>`
+            $("#categoriItem").append(EachItem);
+        })
+    }
+</script>
 
