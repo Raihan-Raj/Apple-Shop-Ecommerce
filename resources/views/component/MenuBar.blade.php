@@ -1,4 +1,3 @@
-
 <!-- Main Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light bg-black fixed-top">
     <div class="container">
@@ -50,7 +49,7 @@
 </nav>
 
 <script>
-    Category();
+    
     async function Category() {
         let res = await axios.get('/CategoryList');
         $("#categoriItem").empty()
