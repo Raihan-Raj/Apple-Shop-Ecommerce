@@ -1,6 +1,5 @@
-<section class="py-5 bg-light">
+<section class="py-5 bg-light mt-3">
     <div class="container">
-
         <!-- Section Heading -->
         <div class="row justify-content-center mb-4">
             <div class="col-md-6 text-center">
@@ -14,14 +13,14 @@
         <!-- Category Items -->
         <div id="TopCategoryItem" class="row g-4">
             <!-- Category Item -->
-            <div class="col-6 col-md-4 col-lg-2">
+        {{-- <div class="col-6 col-md-4 col-lg-2">
                 <div class="card category-card border-0 shadow-sm h-100 text-center">
                     <div class="card-body">
                         <img src="#" alt="Category" class="img-fluid mb-3" style="height:70px; object-fit:contain;">
                         <h6 class="fw-semibold mb-0">Electronics</h6>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
 </section>

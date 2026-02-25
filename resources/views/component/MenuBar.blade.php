@@ -1,21 +1,6 @@
-<!-- Top Contact Bar -->
-<div class="top-bar">
-    <div class="container d-flex justify-content-between">
-        <div class="text-white">
-            <i class="bi bi-telephone text-white"></i> 01615517774
-            <span class="ms-3">
-                <i class="bi bi-envelope"></i> info@apple.com
-            </span>
-        </div>
-        <div class="text-white">
-            <a href="#">About</a>
-            <a href="#">Account</a>
-        </div>
-    </div>
-</div>
 
 <!-- Main Navigation -->
-<nav class="navbar navbar-expand-lg bg-dark">
+<nav class="navbar navbar-expand-lg navbar-light bg-black fixed-top">
     <div class="container">
         <!-- Logo -->
         <a class="navbar-brand d-flex align-items-center text-white" href="#">

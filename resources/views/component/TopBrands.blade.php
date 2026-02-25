@@ -1,12 +1,45 @@
-<body>
-    <h2 style="text-align:center" class="mt-4">Top Brand</h2>
-    <hr>
-<div class="card">
-  <img src="https://static.tildacdn.one/tild6331-6334-4463-b664-626665663565/Product_sourcing.jpg" alt="Denim Jeans" style="width:100%">
-  <h1>Tailored Jeans</h1>
-  <p class="price">$19.99</p>
-  <p>Some text about the jeans. Super slim and comfy lorem ipsum lorem jeansum. Lorem jeamsun denim lorem jeansum.</p>
-  <p><button>Add to Cart</button></p>
-</div>
+<section class="py-5 bg-light">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="row justify-content-center mb-4">
+      <div class="col-md-6 text-center">
+        <h2 class="fw-bold">Top Brand</h2>
+        <p class="text-muted">
+          Discover our most popular categories selected by customers.
+        </p>
+      </div>
+    </div>
 
-</body>
+    <!-- Category Items -->
+    <div id="TopBrand" class="row g-4">
+      <!-- Category Item -->
+      {{-- <div class="col-6 col-md-4 col-lg-2">
+        <div class="card category-card border-0 shadow-sm h-100 text-center">
+          <div class="card-body">
+            <img src="#" alt="Category" class="img-fluid mb-3" style="height:70px; object-fit:contain;">
+            <h6 class="fw-semibold mb-0">Electronics</h6>
+          </div>
+        </div>
+      </div> --}}
+    </div>
+  </div>
+        </section>
+
+        <script>
+          TopBrand();
+          async function TopBrand() {
+            let res = await axios.get('/BrandList');
+            $("#TopBrand").empty()
+            res.data['data'].forEach((item, i) => {
+              let EachItem = `<div class="col-6 col-md-4 col-lg-2">
+                                                                <div class="card category-card border-0 shadow-sm h-100 text-center">
+                                                                    <div class="card-body">
+                                                                        <img src="${item['brandImg']}" class="img-fluid mb-3" style="height:70px; object-fit:contain;">
+                                                                        <h6 class="fw-semibold mb-0">${item['brandName']}</h6>
+                                                                    </div>
+                                                                </div>
+                                                            </div>`
+              $("#TopBrand").append(EachItem);
+            })
+          }
+        </script>
