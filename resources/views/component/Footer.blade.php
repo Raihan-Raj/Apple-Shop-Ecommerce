@@ -16,10 +16,19 @@
                 <div class="resources">
                     <h6 class="footer-heading text-uppercase text-white fw-bold">Resources</h6>
                     <ul class="list-unstyled footer-link mt-4">
-                        <li class="mb-1"><a href="#" class="text-white text-decoration-none fw-semibold">Product</a></li>
-                        <li class="mb-1"><a href="#" class="text-white text-decoration-none fw-semibold">Category</a></li>
-                        <li class="mb-1"><a href="#" class="text-white text-decoration-none fw-semibold">Brand</a></li>
-                        <li class=""><a href="#" class="text-white text-decoration-none fw-semibold">Service</a></li>
+                        <li class="mb-1"><a href="/Policy-Page?type=about" class="text-white text-decoration-none fw-semibold">About Us</a></li>
+                        <li class="mb-1"><a href="/Policy-Page?type=how to buy" class="text-white text-decoration-none fw-semibold">How to
+                                Buy</a></li>
+                        <li class="mb-1"><a href="/Policy-Page?type=contact" class="text-white text-decoration-none fw-semibold">Contact</a>
+                        </li>
+                        <li class="mb-1"><a href="/Policy-Page?type=complain" class="text-white text-decoration-none fw-semibold">Complain</a>
+                        </li>
+                        <li class="mb-1"><a href="/Policy-Page?type=refund" class="text-white text-decoration-none fw-semibold">Refund
+                                Policy</a>
+                        </li>
+                        <li class="mb-1"><a href="/Policy-Page?type=terms" class="text-white text-decoration-none fw-semibold">Terms &
+                                Condition</a>
+                        </li>
                     </ul>
                 </div>
             </div>

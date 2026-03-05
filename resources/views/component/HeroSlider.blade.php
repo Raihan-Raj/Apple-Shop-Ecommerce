@@ -31,7 +31,7 @@
 
     <div class="container">
         <div class="banner_content">
-            <h5>${item.price}</h5>
+            <h5>$${item.price}</h5>
             <h2>${item.title}</h2>
             <a href="#" class="btn">Shop Now</a>
         </div>

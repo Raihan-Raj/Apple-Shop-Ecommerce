@@ -44,6 +44,7 @@ Route::get('/ListProductSlider', [ProductController::class, 'ListProductSlider']
 Route::get('/ProductDetailsById/{id}', [ProductController::class, 'ProductDetailsById']);
 Route::get('/ListReviewByProduct/{product_id}', [ProductController::class, 'ListReviewByProduct']);
 //Policy
+Route::get('/Policy-Page', [PolicyController::class, 'PolicyPage']);
 Route::get('/PolicyByType/{type}', [PolicyController::class, 'PolicyByType']);
 
 //User Auth
