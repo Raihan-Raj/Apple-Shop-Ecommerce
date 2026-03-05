@@ -29,6 +29,7 @@ use TheSeer\Tokenizer\Token as TokenizerToken;
 Route::get('/', [HomeController::class, 'HomePage']);
 
 //Brand List
+Route::get('/ByBrandPage', [BrandController::class, 'ByBrandPage']);
 Route::get('/BrandList', [BrandController::class, 'BrandList']);
 //Category List
 Route::get('/ByCategoryPage', [CategoryController::class, 'ByCategoryPage']);

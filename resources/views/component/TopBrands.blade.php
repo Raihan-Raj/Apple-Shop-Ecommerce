@@ -34,8 +34,10 @@
               let EachItem = `<div class="col-6 col-md-4 col-lg-2">
                                                                 <div class="card category-card border-0 shadow-sm h-100 text-center">
                                                                     <div class="card-body">
-                                                                        <img src="${item['brandImg']}" class="img-fluid mb-3" style="height:70px; object-fit:contain;">
+                                                                        <a href="/ByBrandPage?id=${item['id']}">
+                                                                          <img src="${item['brandImg']}" class="img-fluid mb-3" style="height:70px; object-fit:contain;">
                                                                         <h6 class="fw-semibold mb-0">${item['brandName']}</h6>
+                                                                          </a>
                                                                     </div>
                                                                 </div>
                                                             </div>`

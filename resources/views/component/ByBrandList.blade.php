@@ -3,7 +3,7 @@
         <div class="row align-items-center">
             <div class="col-md-6">
                 <div class="page-title">
-                    <h1>Products: <span id="categoryName"></span> </h1>
+                    <h1>Brand: <span id="brandName"></span> </h1>
                 </div>
             </div>
             <div class="col-md-6">
@@ -17,19 +17,19 @@
 </div>
 <div class="mt-5">
     <div class="container my-5">
-        <div id="byCategoryList" class="row">
+        <div id="byBrandList" class="row">
         
         </div>
     </div>
 </div>
  
 <script>
-    async function ByCategory(){
+    async function Bybrand(){
         let searchParams=new URLSearchParams(window.location.search);
         let id=searchParams.get('id');
 
-        let res = await axios.get(`/ListProductByCategory/${id}`);
-        $("#byCategoryList").empty();
+        let res = await axios.get(`/ListProductByBrand/${id}`);
+        $("#byBrandList").empty();
         res.data['data'].forEach((item,i)=>{
             let EachItem = 
             `<div class="col-6 col-md-4 col-lg-2 mt-5">
@@ -54,8 +54,10 @@
                 </div>
             </div>`
             ;
-            $("#byCategoryList").append(EachItem);
-            $("#categoryName").text(res.data['data'][0]['category']['categoryName']);
+            $("#byBrandList").append(EachItem);
+
+            $("#brandName").text(res.data['data'][0]['brand']['brandName']);
+
             
         })
     }
