@@ -5,12 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AppleShop_Ecommerce</title>
-   
-
 <link rel="stylesheet" href="{{ asset('assets/css/header.css') }}">
-{{--
-<link rel="stylesheet" href="{{ asset('assets/css/TopCategories.css') }}"> --}}
-
+<link rel="stylesheet" href="{{ asset('assets/css/carousel.css') }}">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 <!-- 1️⃣ Bootstrap 5 CSS -->
@@ -50,9 +46,9 @@
 <script src="https://cdn.datatables.net/responsive/2.5.0/js/responsive.bootstrap5.min.js"></script> --}}
 
 </head>
+
 <body>
-
-
+   
 
     <div>
         @yield('content')

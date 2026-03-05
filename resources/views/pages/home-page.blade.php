@@ -10,7 +10,7 @@
         (async () => {
             await Category();
             await Hero();
-            await TopCategory();
+            await TopCategory();      
             await TopBrand();
             await loadProducts();
 

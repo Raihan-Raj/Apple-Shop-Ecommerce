@@ -1,69 +1,5 @@
-<style>
-  /* Full Height Slider */
-  .banner_section .carousel-item {
-    height: 85vh;
-    min-height: 500px;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-  }
 
-  /* Dark overlay */
-  .banner_section .carousel-item::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.55);
-  }
-
-  /* Center content */
-  .banner_content {
-    position: relative;
-    z-index: 2;
-    color: #fff;
-    height: 85vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 5%;
-  }
-
-  /* Title */
-  .banner_content h2 {
-    font-size: 48px;
-    font-weight: 700;
-  }
-
-  /* Price */
-  .banner_content h5 {
-    font-size: 20px;
-    color: #f8f9fa;
-  }
-
-  /* Button */
-  .banner_content .btn {
-    width: 180px;
-    padding: 12px;
-    font-weight: 600;
-    background: #fff;
-    color: #000;
-    border: none;
-    transition: 0.3s;
-  }
-
-  .banner_content .btn:hover {
-    background: #000;
-    color: #fff;
-    border: 1px solid #fff;
-  }
-
-  /* Arrow Style */
-  .custom-arrow {
-    filter: invert(1);
-  }
-</style>
-
-
+<body>
 <div class="banner_section">
   <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
@@ -109,3 +45,5 @@
 
   
 </script>
+
+</body>

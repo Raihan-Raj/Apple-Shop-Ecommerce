@@ -54,7 +54,7 @@
         let res = await axios.get('/CategoryList');
         $("#categoriItem").empty()
         res.data['data'].forEach((item, i) => {
-            let EachItem = `<li><a class="dropdown-item" href="#">${item['categoryName']}</a></li>`
+            let EachItem = `<li><a class="dropdown-item" href="/ByCategoryPage?id=${item['id']}">${item['categoryName']}</a></li>`
             $("#categoriItem").append(EachItem);
         })
     }

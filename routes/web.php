@@ -31,6 +31,7 @@ Route::get('/', [HomeController::class, 'HomePage']);
 //Brand List
 Route::get('/BrandList', [BrandController::class, 'BrandList']);
 //Category List
+Route::get('/ByCategoryPage', [CategoryController::class, 'ByCategoryPage']);
 Route::get('/CategoryList', [CategoryController::class, 'CategoryList']);
 //Product List
 Route::get('/ListProductByCategory/{id}', [ProductController::class, 'ListProductByCategory']);
