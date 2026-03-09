@@ -49,4 +49,9 @@ class UserController extends Controller
     {
         return redirect('/userloginPage')->cookie('token', '', -1);
     }
+
+    public function LoginPage()
+    {
+        return view('pages.login-page');
+    }
 }

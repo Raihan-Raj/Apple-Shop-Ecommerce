@@ -15,7 +15,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
             <ul class="navbar-nav align-items-center">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">HOME</a>
+                    <a class="nav-link" href="/">HOME</a>
                 </li>
 
                 <li class="nav-item dropdown">

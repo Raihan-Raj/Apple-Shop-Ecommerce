@@ -37,9 +37,9 @@
                     <div class="product-img-wrapper">
                         <img src="${item['image']}" class="img-fluid w-100">
                         <div class="hover-icons">
+                            <a href="/product-details?id=${item['id']}">
                             <button class="btn btn-sm btn-light"><i class="bi bi-cart"></i></button>
-                            <button class="btn btn-sm btn-light"><i class="bi bi-search"></i></button>
-                            <button class="btn btn-sm btn-light"><i class="bi bi-heart"></i></button>
+                            </a>
                         </div>
                     </div>
                     <div class="card-body text-start">

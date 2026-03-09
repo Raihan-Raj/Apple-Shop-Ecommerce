@@ -154,4 +154,9 @@ class ProductController extends Controller
             ->delete();
         return ResponseHelper::Out('success', $data, 200);
     }
+
+    public function ProductDetails()
+    {
+        return view('pages.product-details-page');
+    }
 }

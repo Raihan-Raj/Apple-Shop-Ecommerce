@@ -1,4 +1,4 @@
-<section class="py-5 bg-light">
+<section class="py-5 bg-light" style="margin-top: 10%">
   <div class="container">
     <!-- Section Heading -->
     <div class="row justify-content-center mb-4">
@@ -11,16 +11,7 @@
     </div>
 
     <!-- Category Items -->
-    <div id="TopBrand" class="row g-4">
-      <!-- Category Item -->
-      {{-- <div class="col-6 col-md-4 col-lg-2">
-        <div class="card category-card border-0 shadow-sm h-100 text-center">
-          <div class="card-body">
-            <img src="#" alt="Category" class="img-fluid mb-3" style="height:70px; object-fit:contain;">
-            <h6 class="fw-semibold mb-0">Electronics</h6>
-          </div>
-        </div>
-      </div> --}}
+    <div id="TopBrand" class="row" style="margin-top: 5%">
     </div>
   </div>
         </section>
@@ -32,15 +23,15 @@
             $("#TopBrand").empty()
             res.data['data'].forEach((item, i) => {
               let EachItem = `<div class="col-6 col-md-4 col-lg-2">
-                                                                <div class="card category-card border-0 shadow-sm h-100 text-center">
-                                                                    <div class="card-body">
-                                                                        <a href="/ByBrandPage?id=${item['id']}">
-                                                                          <img src="${item['brandImg']}" class="img-fluid mb-3" style="height:70px; object-fit:contain;">
-                                                                        <h6 class="fw-semibold mb-0">${item['brandName']}</h6>
-                                                                          </a>
-                                                                    </div>
-                                                                </div>
-                                                            </div>`
+                              <div class="card category-card border-0 shadow-sm h-100 text-center">
+                              <div class="card-body">
+                              <a href="/ByBrandPage?id=${item['id']}">
+                              <img src="${item['brandImg']}" class="img-fluid mb-3">
+                              <h6 class="fw-semibold mb-0">${item['brandName']}</h6>
+                              </a>
+                              </div>
+                              </div>
+                              </div>`
               $("#TopBrand").append(EachItem);
             })
           }

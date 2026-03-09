@@ -84,17 +84,15 @@
                 <div class="card product-card h-100 shadow-sm border-0">
 
                     <div class="product-img-wrapper">
+                      <a href="/product-details?id=${item['id']}">
                         <img src="${item.image}" class="img-fluid w-100">
-
                         <div class="hover-icons">
                             <button class="btn btn-sm btn-light"><i class="bi bi-cart"></i></button>
-                            <button class="btn btn-sm btn-light"><i class="bi bi-search"></i></button>
-                            <button class="btn btn-sm btn-light"><i class="bi bi-heart"></i></button>
                         </div>
+                        </a>
                     </div>
-
                     <div class="card-body text-start">
-                        <h6 class="mb-1 text-truncate">${item.title}</h6>
+                      <h6 class="mb-1 text-truncate">${item.title}</h6>
                         <div class="fw-bold text-primary">$${item.price}</div>
 
                         <div class="mt-2">
