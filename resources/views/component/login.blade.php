@@ -61,16 +61,28 @@ body{
 </div>
 </body>
 <script>
-    async function login() {
-        let email = document.getElementById('email').value;
-        if (email.length === 0) {
-            alert("Email Required !");
-        } else {
-            let res = await axios.get("/UserLogin/" + email);
-            if (res.status === 200) {
-                sessionStorage.setItem('email', email);
-                window.location.href = "/verify-page"
-            }
-        }
+    
+   async function login() {
+    let email = document.getElementById('email').value;
+    if(email.length === 0){
+        alert("Email Required !");
+        return;
     }
+    // SHOW LOADER
+    $(".preloader").fadeIn(200).removeClass('loaded');
+    try{
+        let res = await axios.get("/UserLogin/" + email);
+        if(res.status === 200){
+            sessionSto rage.setItem('email' , email);
+            // Wait 3 seconds before redirect
+            setTimeout(function(){
+                window.location.href = " /v erify-page";
+            }, 3000);
+        }
+    }catch(error){
+        alert("Something Went  Wrong ");
+         // HIDE LOADER
+        $(".preloader").fadeOut(200).addClass('loaded');
+    }
+}
 </script>
