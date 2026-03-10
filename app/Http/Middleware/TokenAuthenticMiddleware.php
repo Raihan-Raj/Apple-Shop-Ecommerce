@@ -19,7 +19,7 @@ class TokenAuthenticMiddleware
         $token = $request->cookie('token');
         $result = JWTToken::ReadToken($token);
         if ($result == "unauthorized") {
-            return redirect('/login-page');
+            return redirect('/UserLogin');
         } else {
             $request->headers->set('email', $result->userEmail);
             $request->headers->set('id', $result->userID);

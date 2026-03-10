@@ -1,11 +1,12 @@
 
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Login</title>
 
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
 body{
@@ -50,7 +51,7 @@ body{
 
             <div class="card-body">
 
-                <form>
+                <div>
 
                     <div class="mb-3">
                         <label class="form-label">Email</label>
@@ -80,7 +81,7 @@ body{
                         <a href="#">Register</a>
                     </div>
 
-                </form>
+                </div>
 
             </div>
 

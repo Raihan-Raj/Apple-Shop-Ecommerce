@@ -276,11 +276,11 @@ img{
       </div>
 
       <div class = "purchase-info">
-        <input type = "number" min = "0" value = "1">
-        <button type = "button" class = "btn">
+        <input id="p_qty" type="number" min="0" value="1">
+        <button onclick="AddToCart()" type="button" class="btn">
           Add to Cart <i class = "fas fa-shopping-cart"></i>
         </button>
-        <button onclick="AddToWishList()" type = "button" class = "btn"><i class="fa-solid fa-heart"></i></button>
+        <button onclick="AddToWishList()" type="button" class="btn"><i class="fa-solid fa-heart"></i></button>
       </div>
 
       <div class = "social-links">
@@ -357,8 +357,55 @@ img{
         });
     }
 
-    /* async function AddToWishList(){
-        let res=await axios.post('/CreateWishList/'+id);
-        console.log(res.data);
-    } */
+
+        async function AddToCart() {
+            try {
+                let p_color = document.getElementById('p-color').value;
+                let p_size = document.getElementById('p-size').value;
+                let p_qty = document.getElementById('p_qty').value;
+                
+
+                if (p_color.length === 0) {
+                    alert("Product Color Required !");
+                }
+                else if (p_size.length === 0) {
+                    alert("Product Size Required !");
+                }
+                else if (p_qty == 0) {
+                    alert("Product Qty Required !");
+                }
+                else {
+                    let res = await axios.post("/CreateCartList", {
+                        "product_id": id,
+                        "color": p_color,
+                        "size": p_size,
+                        "qty": p_qty
+                    });
+                }
+
+            } catch (e) {
+
+                if (e.response.status === 404) {
+                    window.location.href = "/login-page";
+                }
+                else {
+                    console.log(e);
+                }
+
+            }
+        }
+
+        async function AddToWishList(){
+            try{
+                let res = await axios.get('/CreateWishList/'+id);
+            }catch(e){
+                if(e.response.status===405){
+                    window.location.href="/login-page";
+                }else {
+                    console.log(e);
+                }
+            }
+        }
+    
+
 </script>
