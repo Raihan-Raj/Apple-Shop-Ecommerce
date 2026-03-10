@@ -48,11 +48,11 @@ body{
             <div class="card-body">
                 <div>
                     <div class="mb-3">
-                        <label class="form-label">Email</label>
-                        <input id="email" type="email" class="form-control" placeholder="Enter Email">
+                        <label class="form-label">Verification Code</label>
+                        <input id="code" type="code" class="form-control" placeholder="Enter Verification Code">
                     </div>
-                    <button onclick="login()" type="submit" class="btn btn-primary btn-login">
-                        Login
+                    <button onclick="verify()" type="submit" class="btn btn-primary btn-login">
+                        Submit
                     </button>
                 </div>
             </div>
@@ -61,15 +61,16 @@ body{
 </div>
 </body>
 <script>
-    async function login() {
-        let email = document.getElementById('email').value;
-        if (email.length === 0) {
-            alert("Email Required !");
+    async function verify() {
+        let code = document.getElementById('code').value;
+        let email = sessionStorage.getItem('email');
+        if (code.length === 0) {
+            alert("Code Required !");
         } else {
-            let res = await axios.get("/UserLogin/" + email);
+            let res = await axios.get("/VerifyLogin/" + email+"/"+code);
             if (res.status === 200) {
-                sessionStorage.setItem('email', email);
-                window.location.href = "/verify-page"
+                
+            
             }
         }
     }

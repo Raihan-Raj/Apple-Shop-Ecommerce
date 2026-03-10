@@ -27,12 +27,17 @@ use TheSeer\Tokenizer\Token as TokenizerToken;
 
 //HomePage
 Route::get('/', [HomeController::class, 'HomePage']);
-
-//Brand List
 Route::get('/ByBrandPage', [BrandController::class, 'ByBrandPage']);
+Route::get('/ByCategoryPage', [CategoryController::class, 'ByCategoryPage']);
+Route::get('/product-details', [ProductController::class, 'ProductDetails']);
+Route::get('/Policy-Page', [PolicyController::class, 'PolicyPage']);
+Route::get('/login-page', [UserController::class, 'LoginPage']);
+Route::get('/verify-page', [UserController::class, 'VerifyPage']);
+//Brand List
+
 Route::get('/BrandList', [BrandController::class, 'BrandList']);
 //Category List
-Route::get('/ByCategoryPage', [CategoryController::class, 'ByCategoryPage']);
+
 Route::get('/CategoryList', [CategoryController::class, 'CategoryList']);
 //Product List
 Route::get('/ListProductByCategory/{id}', [ProductController::class, 'ListProductByCategory']);
@@ -43,16 +48,16 @@ Route::get('/ListProductSlider', [ProductController::class, 'ListProductSlider']
 //Product Details
 Route::get('/ProductDetailsById/{id}', [ProductController::class, 'ProductDetailsById']);
 Route::get('/ListReviewByProduct/{product_id}', [ProductController::class, 'ListReviewByProduct']);
-Route::get('/product-details', [ProductController::class, 'ProductDetails']);
+
 //Policy
-Route::get('/Policy-Page', [PolicyController::class, 'PolicyPage']);
+
 Route::get('/PolicyByType/{type}', [PolicyController::class, 'PolicyByType']);
 
 //User Auth
 Route::get('/UserLogin/{UserEmail}', [UserController::class, 'UserLogin']);
 Route::get('/VerifyLogin/{UserEmail}/{OTP}', [UserController::class, 'VerifyLogin']);
 Route::get('/Logout', [UserController::class, 'UserLogout']);
-Route::get('/login-page', [UserController::class, 'LoginPage']);
+
 
 //User Profile
 
