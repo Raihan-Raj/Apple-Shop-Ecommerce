@@ -372,12 +372,17 @@ img{
             else if (p_qty === 0) {
                 alert("Product qty Required !");
             } else {
-                let res = await axios.get('/CreateCartList/', {
+                $(".preloader").fadeIn(200).removeClass('loaded');
+                let res = await axios.post('/CreateCartList/', {
                     "product_id": id,
                     "color": p_color,
                     "size": p_size,
                     "qty": p_qty
                 });
+                $(".preloader").fadeOut(200).addClass('loaded');
+                if(res.status===200){
+                   alert("Request Complete !");
+                   } 
             }     
         } catch (e) {
             if (e.response.status === 405) {
@@ -391,9 +396,14 @@ img{
           
     async function AddToWishList(){
      try{
-    let res = await axios.get('/CreateWishList/'+id);
+         $(".preloader").fadeIn(200).removeClass('loaded');
+    let res = await axios.post('/CreateWishList/'+id);
+         $(".preloader").fadeOut(200).addClass('loaded');
+         if (res.status === 200) {
+             alert("Request Successfull");
+         }
     }catch(e){
-    if(e.response.status===405){ 
+         if (e.response.status === 401) { 
     sessionStorage.setItem("last_location",window.location.href);                                                                                                                    
         window.location.href="/login-page";
     }else {
