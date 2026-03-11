@@ -27,7 +27,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link icon-link" href="#">
+                    <a class="nav-link icon-link" href="/wish-page">
                         <i class="bi bi-heart"></i> WISH
                     </a>
                 </li>

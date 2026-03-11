@@ -33,6 +33,7 @@ Route::get('/product-details', [ProductController::class, 'ProductDetails']);
 Route::get('/Policy-Page', [PolicyController::class, 'PolicyPage']);
 Route::get('/login-page', [UserController::class, 'LoginPage']);
 Route::get('/verify-page', [UserController::class, 'VerifyPage']);
+Route::get('/wish-page', [ProductController::class, 'WishList']);
 //Brand List
 Route::get('/BrandList', [BrandController::class, 'BrandList']);
 //Category List

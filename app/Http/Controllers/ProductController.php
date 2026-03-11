@@ -159,4 +159,9 @@ class ProductController extends Controller
     {
         return view('pages.product-details-page');
     }
+
+    public function WishList()
+    {
+        return view('pages.wishlist-page');
+    }
 }
