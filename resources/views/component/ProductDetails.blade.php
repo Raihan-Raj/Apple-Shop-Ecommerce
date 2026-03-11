@@ -357,55 +357,50 @@ img{
         });
     }
 
+    async function AddToCart() {
+        try {
+            let p_color = document.getElementById('p-color').value;
+            let p_size = document.getElementById('p-size').value;
+            let p_qty = document.getElementById('p_qty').value;
 
-        async function AddToCart() {
-            try {
-                let p_color = document.getElementById('p-color').value;
-                let p_size = document.getElementById('p-size').value;
-                let p_qty = document.getElementById('p_qty').value;
-                
-
-                if (p_color.length === 0) {
-                    alert("Product Color Required !");
-                }
-                else if (p_size.length === 0) {
-                    alert("Product Size Required !");
-                }
-                else if (p_qty == 0) {
-                    alert("Product Qty Required !");
-                }
-                else {
-                    let res = await axios.post("/CreateCartList", {
-                        "product_id": id,
-                        "color": p_color,
-                        "size": p_size,
-                        "qty": p_qty
-                    });
-                }
-
-            } catch (e) {
-
-                if (e.response.status === 404) {
-                    window.location.href = "/login-page";
-                }
-                else {
-                    console.log(e);
-                }
-
+            if (p_color.length === 0) {
+                alert("Product color Required !");
             }
-        }
-
-        async function AddToWishList(){
-            try{
-                let res = await axios.get('/CreateWishList/'+id);
-            }catch(e){
-                if(e.response.status===405){
-                    window.location.href="/login-page";
-                }else {
+         else if (p_size.length === 0) {
+             alert("Product size Required !");
+         }
+            else if (p_qty === 0) {
+                alert("Product qty Required !");
+            } else {
+                let res = await axios.get('/CreateCartList/', {
+                    "product_id": id,
+                    "color": p_color,
+                    "size": p_size,
+                    "qty": p_qty
+                });
+            }     
+        } catch (e) {
+            if (e.response.status === 405) {
+      sessionStorage.setItem("last_location",window.location.href);          
+      window.location.href = "/login-page";
+            } else {
                     console.log(e);
                 }
             }
         }
+          
+    async function AddToWishList(){
+     try{
+    let res = await axios.get('/CreateWishList/'+id);
+    }catch(e){
+    if(e.response.status===405){ 
+    sessionStorage.setItem("last_location",window.location.href);                                                                                                                    
+        window.location.href="/login-page";
+    }else {
+    console.log(e);
+   }
+}
+}
     
 
 </script>

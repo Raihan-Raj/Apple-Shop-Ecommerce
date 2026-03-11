@@ -67,10 +67,18 @@ body{
         if (code.length === 0) {
             alert("Code Required !");
         } else {
+            $(".preloader").fadeIn(200).removeClass('loaded');
             let res = await axios.get("/VerifyLogin/" + email+"/"+code);
             if (res.status === 200) {
-                
+              if(sessionStorage.getItem("last_location")){
+                window.location.href=sessionStorage.getItem("last_location")
+              } else{
+                window.location.href="/"
+              }
             
+            }else{
+                $(".preloader").fadeOut(200).addClass('loaded');
+                alert("Something Went Wrong");
             }
         }
     }
