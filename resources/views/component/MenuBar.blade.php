@@ -33,7 +33,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link icon-link" href="#">
+                    <a class="nav-link icon-link" href="/cart-page">
                         <i class="bi bi-cart"></i> CART
                     </a>
                 </li>

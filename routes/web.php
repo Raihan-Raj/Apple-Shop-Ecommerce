@@ -34,6 +34,7 @@ Route::get('/Policy-Page', [PolicyController::class, 'PolicyPage']);
 Route::get('/login-page', [UserController::class, 'LoginPage']);
 Route::get('/verify-page', [UserController::class, 'VerifyPage']);
 Route::get('/wish-page', [ProductController::class, 'WishList']);
+Route::get('/cart-page', [ProductController::class, 'CartListPage']);
 //Brand List
 Route::get('/BrandList', [BrandController::class, 'BrandList']);
 //Category List

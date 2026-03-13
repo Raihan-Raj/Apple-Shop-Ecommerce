@@ -385,7 +385,7 @@ img{
                    } 
             }     
         } catch (e) {
-            if (e.response.status === 405) {
+            if (e.response.status === 404) {
       sessionStorage.setItem("last_location",window.location.href);          
       window.location.href = "/login-page";
             } else {
