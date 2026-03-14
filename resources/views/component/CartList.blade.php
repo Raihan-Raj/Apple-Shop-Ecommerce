@@ -19,7 +19,7 @@
 <div class="wrap">
   <header class="cart-header cf">
     <strong>Items in Your Cart</strong>
-    <span class="btn">Checkout</span>
+    <span onclick="CheckOut()" class="btn">Checkout</span>
   </header>
   
   <div id="cartItem" class="">
@@ -39,13 +39,13 @@
   </div>
   
   <div class="cart-footer cf">
-      <span class="btn btn-success">Checkout</span>
+      <span onclick="CheckOut()" class="btn btn-success">Checkout</span>
      <a href="#"><span class="cont-shopping"><i class="i-angle-left"></i>Continue Shopping</span></a>   
   </div>
 </div>
 
 <script>
-    CartItem();
+    
     async function CartItem(){
         let res = await axios.get('/CartList');
         $("#cartItem").empty();
@@ -106,6 +106,25 @@
             alert("Request Fail")
         }
     } 
+        
+        async function CheckOut() {
+          $("#paymentList").empty();
+          let res = await axios.get('/InvoiceCreate');
+          if (res.status === 200) {
+            $("#paymentMethodModal").modal('show');
+            res.data['data'][0]['paymentMethod'].forEach((item, i) => {
+              let EachItem = `<tr>
+            <td><img class="w-50" src=${item['logo']} alt="product"></td>
+            <td><p>${item['name']}</p></td>
+            <td><a class="btn btn-danger btn-sm" href="${item['redirectGatewayURL']}">Pay</a></td>
+            </tr>`
+              $("#paymentList").append(EachItem);
+            })
+          }
+          else {
+            alert("Request Fail");
+          }
+        }
 
     
 </script>
