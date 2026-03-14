@@ -43,6 +43,15 @@
                         <i class="bi bi-search"></i> SEARCH
                     </a>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">About</a>
+                    @if(Cookie::get('token') !== null)
+                        <a href="#"><i class="linearicons-user"></i>Account</a>
+                        <a href="{{ url("/Logout") }}"><i class="linearicons-user"></i>Logout</a>
+                    @else
+                        <a href="{{ url("/login-page") }}">Login</a>
+                    @endif
+                </li>
             </ul>
         </div>
     </div>
